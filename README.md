@@ -6,7 +6,9 @@ Cookie issue tracker system.
 
 ### Frontend
 
-
+- [**Next.js**](https://nextjs.org/)
+- [**MUI**](https://mui.com/)
+- [**Apollo Client**](https://www.apollographql.com/)
 
 ### Backend
 

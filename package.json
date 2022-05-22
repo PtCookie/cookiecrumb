@@ -9,6 +9,9 @@
         "email": "ptcookie@outlook.com",
         "url": "https://blog.ptcookie.dev/"
     },
+    "engines": {
+        "node": ">=14.16.0 || >=16.0.0 || >= 18.0.0"
+    },
     "packageManager": "yarn@1.22.18",
     "workspaces": [
         "packages/*"
