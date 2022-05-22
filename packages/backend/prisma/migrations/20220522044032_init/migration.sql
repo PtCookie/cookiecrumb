@@ -1,0 +1,34 @@
+-- CreateTable
+CREATE TABLE "Board" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    "name" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Step" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    "name" TEXT NOT NULL,
+    "boardId" INTEGER NOT NULL,
+    CONSTRAINT "Step_boardId_fkey" FOREIGN KEY ("boardId") REFERENCES "Board" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Issue" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    "title" TEXT NOT NULL,
+    "content" TEXT,
+    "stepId" INTEGER NOT NULL,
+    CONSTRAINT "Issue_stepId_fkey" FOREIGN KEY ("stepId") REFERENCES "Step" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Board_name_key" ON "Board"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Step_name_key" ON "Step"("name");

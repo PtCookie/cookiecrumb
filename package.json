@@ -1,0 +1,56 @@
+{
+    "name": "cookiecrumb",
+    "version": "1.0.0",
+    "description": "Cookie issue tracker system monorepo",
+    "private": true,
+    "license": "MIT",
+    "author": {
+        "name": "PtCookie",
+        "email": "ptcookie@outlook.com",
+        "url": "https://blog.ptcookie.dev/"
+    },
+    "packageManager": "yarn@1.22.18",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "prepare": "husky install",
+        "build": "yarn workspaces run build"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.25.0",
+        "@typescript-eslint/parser": "^5.25.0",
+        "eslint": "^8.16.0",
+        "eslint-config-prettier": "^8.5.0",
+        "husky": "^8.0.1",
+        "lint-staged": "^12.4.1",
+        "prettier": "^2.6.2",
+        "typescript": "^4.6.4"
+    },
+    "eslintConfig": {
+        "root": true,
+        "extends": [
+            "eslint:recommended",
+            "plugin:@typescript-eslint/recommended",
+            "prettier"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+            "project": [
+                "./packages/**/tsconfig.json"
+            ]
+        },
+        "plugins": [
+            "@typescript-eslint"
+        ]
+    },
+    "prettier": {
+        "printWidth": 120,
+        "singleQuote": true,
+        "trailingComma": "all"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": "eslint --cache --fix",
+        "*.{ts,tsx,yml,md}": "prettier --write"
+    }
+}

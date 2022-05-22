@@ -1,0 +1,27 @@
+# Dependency directories
+node_modules/
+
+# Prisma
+generated/
+*.db
+
+# Production
+dist/
+.next/
+
+# Build cache
+*.tsbuildinfo
+.eslintcache
+
+# Debug
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+
+# IDE
+.idea/
+
+# Misc
+.DS_Store
